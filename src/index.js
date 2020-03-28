@@ -23,7 +23,8 @@ const popupEditProfile = new Popup(document.querySelector('.popup-edit'));
 const userInfo = new UserInfo(formEdit, document.querySelector('.user-info__name'), document.querySelector('.user-info__job'));
 const popUpImage = new Popup(document.querySelector('.popup-bigpic'));
 
-const serverUrl = process.env.NODE_ENV === 'development' ? 'http://praktikum.tk/cohort8/' : 'https://praktikum.tk/cohort8/';
+const baseUrl = process.env.NODE_ENV === 'development' ? 'http://praktikum.tk/cohort8/' : 'https://praktikum.tk/cohort8/';
+const token = '226384b6-e4f9-420c-aeac-b659b74a1b4c'; // Токен
 
 // Удаления карточки
 document.querySelector('.places-list').addEventListener("click", function(event) {
@@ -107,10 +108,6 @@ document.querySelector('.popup__close_big-pic').addEventListener("click", () => 
 const userName = document.querySelector('.user-info__name');
 const userAbout = document.querySelector('.user-info__job');
 const userAvatar = document.querySelector('.user-info__photo');
-
-
-const baseUrl = 'https://praktikum.tk/cohort8/'; // Базовый урл с идентификатором группы
-const token = '226384b6-e4f9-420c-aeac-b659b74a1b4c'; // Токен
 
 const api = new Api(baseUrl, token); // Объявляем класс Api
 
