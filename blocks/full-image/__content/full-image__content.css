@@ -1,0 +1,24 @@
+.full-image__content {
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: border-box;
+  height: 80%;
+  width: auto;
+}
+
+/* added */
+.full-image__content.full-image__content_is-opened {
+  display: flex;
+}
+
+@media screen and (max-width: 540px) {
+  .full-image__content {
+    width: calc(100% - 60px);
+  }
+}

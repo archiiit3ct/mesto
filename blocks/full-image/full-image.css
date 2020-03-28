@@ -1,0 +1,20 @@
+@import url(./__content/full-image__content.css);
+@import url(./__close/full-image__close.css);
+@import url(./_is-opened/full-image_is-opened.css);
+@import url(./__picture/full-image__picture.css);
+
+.full-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: none;
+}
+
+.full-image__main {
+  max-width: 80vw;
+  max-height: 80vh;
+  display: block;
+}

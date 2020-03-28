@@ -1,0 +1,7 @@
+.popup-image{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-size: cover !important;
+  background-repeat:no-repeat !important; 
+}

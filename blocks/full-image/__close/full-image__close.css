@@ -1,0 +1,7 @@
+.full-image__close-wrapper {
+  width: 26px;
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  cursor: pointer;
+}

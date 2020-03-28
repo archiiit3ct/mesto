@@ -1,0 +1,17 @@
+.user-info__edit-profile {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid white;
+    margin-top: 20px;
+    border-radius: 1px;
+}
+
+.user-info__edit-profile:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 3px;
+}
+
+.user-info__edit-profile:active, .user-info__edit-profile:focus {
+    outline: none;
+}
