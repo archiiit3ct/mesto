@@ -1,3 +1,11 @@
+import "./style.css";
+import {Api} from './script/Api.js';
+import {CardList} from './script/CardList.js';
+import {Card} from './script/Card.js';
+import {FormValidator} from './script/FormValidator.js';
+import {Popup} from './script/Popup.js';
+import {UserInfo} from './script/UserInfo.js';
+
 (function () {
 
 /* Переменные */
@@ -14,6 +22,9 @@ const popupAddCard = new Popup(document.querySelector('.popup'));
 const popupEditProfile = new Popup(document.querySelector('.popup-edit'));
 const userInfo = new UserInfo(formEdit, document.querySelector('.user-info__name'), document.querySelector('.user-info__job'));
 const popUpImage = new Popup(document.querySelector('.popup-bigpic'));
+
+const baseUrl = process.env.NODE_ENV === 'development' ? 'http://praktikum.tk/cohort8/' : 'https://praktikum.tk/cohort8/';
+const token = '226384b6-e4f9-420c-aeac-b659b74a1b4c';
 
 // Удаления карточки
 document.querySelector('.places-list').addEventListener("click", function(event) {
@@ -94,16 +105,9 @@ document.querySelector('.popup__close_big-pic').addEventListener("click", () => 
 }
 );
 
-
-//______________________Проектная работа №9____________________________
-
 const userName = document.querySelector('.user-info__name');
 const userAbout = document.querySelector('.user-info__job');
 const userAvatar = document.querySelector('.user-info__photo');
-
-
-const baseUrl = 'https://praktikum.tk/cohort8/'; // Базовый урл с идентификатором группы
-const token = '226384b6-e4f9-420c-aeac-b659b74a1b4c'; // Токен
 
 const api = new Api(baseUrl, token); // Объявляем класс Api
 
@@ -120,42 +124,3 @@ api.getInitCards().then((data) => {
 }).catch(err => console.error('Error: ', err));
 
 })();
-
-/** REVIEW: В целом по работе:
- *
- * Хорошая работа, функциональность работает в поном обьеме, ошибки и данные с запросов корректно обрабатываются.
- *
- * Что сделано хорошо:
- * - Использован синтаксис async/await
- * - Ошибки выводятся в консоль
- * - Реализовано добавление\удаление карточки. Нельзя удалить чужие карточки.
- *
- * Что можно улучшить(необязательно):
- * - Выводить ошибки пользователю, если запрос не удался или содержит ошибку
- * - Если с сервера приходит очень много карточек, то подумайте как можно реализовать пагинацию для них
- * или рендер по запросу пользователя(например кнопка показать еще которая рендерит дополнительно 10 карточек)
- * - Реализовать лайк и счетчик лайков
- *
- **/
-
-
-/*
-    Здравствуйте!
-    Спасибо большое за вашу работу, исправил ваши замечания "Надо исправить".
-    По поводу того, что можно улучшить, я просто боюсь сдать не вовремя, поэтому исправляю
-    только критические замечания. Улучшением я в любом случае для себя займусь на "каникулах",
-    и постараюсь сделать для себя все дополнительные задания. Есть вопрос в связи с этим:
-    сервер, с которым мы работали, после дедлайна будет работать и им можно будет пользоваться?
-    если да, то для меня это очень хорошая новость:)
-    Ещё раз спасибо за вашу работу и нужные и полезные замечания.
-    И на последок:
-    if (you-are-a-man) {
-        alert('С праздником вас!');
-    } else {
-        alert('С наступающим праздником;)');
-    }
-*/
-
-/** REVIEW: :
-*   Спасибо за поздравления) Да, сервер должен работать
-**/

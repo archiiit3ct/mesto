@@ -1,5 +1,5 @@
 // Класс для валидации полей формы
-class FormValidator {
+export class FormValidator {
 	/*  Конструктор принимает элемент попапа, внутри которого находится эта форма. */
 	constructor(popup) {
 		this.popup = popup;

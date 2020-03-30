@@ -1,5 +1,5 @@
 // Класс для создание карточки
-class Card {
+export class Card {
     /* Принимает в себя название карточки и ссылку, так же добавляет удаление карточки и лайк */
     constructor(link, name) {
         this.link = link;
